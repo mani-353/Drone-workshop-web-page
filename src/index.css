@@ -1,0 +1,400 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced design system for NIT Rourkela workshop website - NO YELLOW/ORANGE */
+
+@layer base {
+  :root {
+    --background: 248 250 252;
+    --foreground: 15 23 42;
+
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+
+    --primary: 30 58 138;
+    --primary-foreground: 248 250 252;
+
+    --secondary: 241 245 249;
+    --secondary-foreground: 51 65 85;
+
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
+
+    --accent: 59 130 246;
+    /* Changed from orange to blue */
+    --accent-foreground: 15 23 42;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 30 58 138;
+
+    --radius: 0.75rem;
+
+    /* Enhanced NIT color palette - REMOVED ALL ORANGE/YELLOW */
+    --nit-deep-blue: 15 50 120;
+    --nit-light-blue: 59 130 246;
+    --nit-accent: 99 102 241;
+    /* Changed to indigo instead of orange */
+    --nit-secondary: 139 92 246;
+    /* Changed to purple instead of gold */
+    --nit-gray: 71 85 105;
+    --nit-light-gray: 241 245 249;
+    --gradient-primary: linear-gradient(135deg, rgb(15 50 120) 0%, rgb(59 130 246) 100%);
+    --gradient-accent: linear-gradient(135deg, rgb(99 102 241) 0%, rgb(139 92 246) 100%);
+    /* No orange/yellow */
+  }
+
+  .dark {
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+    --primary: 59 130 246;
+    --primary-foreground: 15 23 42;
+    --secondary: 30 41 59;
+    --secondary-foreground: 226 232 240;
+    --accent: 99 102 241;
+    /* Changed from orange to indigo */
+    --accent-foreground: 15 23 42;
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 59 130 246;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+/* LOADING SPINNER COMPLETELY REMOVED */
+/* All loading-spinner related CSS has been removed */
+
+/* Enhanced animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.5s ease-out forwards;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Enhanced scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll.slide-right {
+  transform: translateX(-50px);
+}
+
+.animate-on-scroll.slide-right.visible {
+  transform: translateX(0);
+}
+
+.animate-on-scroll.slide-left {
+  transform: translateX(50px);
+}
+
+.animate-on-scroll.slide-left.visible {
+  transform: translateX(0);
+}
+
+/* Enhanced heading styles - NO YELLOW/ORANGE */
+.hero-heading {
+  background: linear-gradient(135deg, rgb(15 50 120) 0%, rgb(59 130 246) 50%, rgb(99 102 241) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(99 102 241), rgb(59 130 246));
+  /* No orange */
+  border-radius: 2px;
+  animation: expand-underline 1s ease-out 0.5s forwards;
+}
+
+@keyframes expand-underline {
+  to {
+    width: 60%;
+  }
+}
+
+/* Floating register button - NO YELLOW/ORANGE */
+.floating-register {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.4);
+  /* Changed from orange to blue */
+  backdrop-filter: blur(16px);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.floating-register:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.6);
+  /* Changed from orange to blue */
+}
+
+/* Enhanced gradient backgrounds - NO YELLOW/ORANGE */
+.gradient-primary {
+  background: linear-gradient(135deg, rgb(15 50 120) 0%, rgb(59 130 246) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, rgb(99 102 241) 0%, rgb(139 92 246) 100%);
+  /* Changed from orange/yellow to indigo/purple */
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg,
+      rgba(15, 50, 120, 0.95) 0%,
+      rgba(59, 130, 246, 0.9) 50%,
+      rgba(248, 250, 252, 0.95) 100%);
+}
+
+.glass-effect {
+  backdrop-filter: blur(20px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  backdrop-filter: blur(20px) saturate(180%);
+  background-color: rgba(15, 50, 120, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced button styles - NO YELLOW/ORANGE */
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-800 to-blue-600 text-white font-semibold px-8 py-4 rounded-full;
+  @apply hover:from-blue-900 hover:to-blue-700 transition-all duration-300;
+  @apply shadow-lg hover:shadow-xl hover:scale-105;
+  @apply border border-blue-700/20;
+}
+
+.btn-accent {
+  @apply bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold px-8 py-4 rounded-full;
+  /* Changed from orange/yellow to indigo/purple */
+  @apply hover:from-indigo-600 hover:to-purple-600 transition-all duration-300;
+  @apply shadow-lg hover:shadow-xl hover:scale-105;
+  @apply border border-indigo-400/20;
+  /* Changed from orange to indigo */
+}
+
+/* Card enhancements */
+.card-enhanced {
+  @apply bg-white rounded-2xl shadow-lg border border-gray-100/50;
+  @apply hover:shadow-2xl hover:border-blue-200/50 transition-all duration-500;
+  @apply backdrop-blur-sm;
+}
+
+.card-enhanced:hover {
+  transform: translateY(-8px);
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .floating-register {
+    bottom: 16px;
+    right: 16px;
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .card-enhanced {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Footer specific styles */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.footer-link {
+  @apply text-gray-300 hover:text-white transition-colors duration-200 text-sm;
+}
+
+/* Pattern backgrounds */
+.pattern-dots {
+  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-grid {
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
