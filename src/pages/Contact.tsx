@@ -197,10 +197,10 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-4">By Air</h3>
                 <p className="text-slate-600 mb-4">
-                  Nearest airport is Biju Patnaik International Airport, Bhubaneswar (about 340 km away)
+                  Four convenient airports: Rourkela (10 km), Jharsuguda (100 km), Ranchi (167 km), Bhubaneswar (320 km)
                 </p>
                 <p className="text-sm text-slate-500">
-                  From airport, take bus or taxi to Rourkela
+                  Jharsuguda Airport is most convenient for visitors from other states
                 </p>
               </CardContent>
             </Card>
@@ -212,10 +212,10 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-4">By Train</h3>
                 <p className="text-slate-600 mb-4">
-                  Rourkela Railway Station is well connected to major cities across India
+                  Rourkela Railway Station connects to major Indian cities with regular services
                 </p>
                 <p className="text-sm text-slate-500">
-                  Direct trains from Delhi, Mumbai, Kolkata, Chennai
+                  Direct trains available from Delhi, Mumbai, Kolkata, and Chennai
                 </p>
               </CardContent>
             </Card>
@@ -227,10 +227,10 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-4">By Road</h3>
                 <p className="text-slate-600 mb-4">
-                  Well connected by National Highway 143 and state highways
+                  Excellent connectivity via National Highway 143 and well-maintained state highways
                 </p>
                 <p className="text-sm text-slate-500">
-                  Regular bus services from nearby cities
+                  Regular bus services and taxi options from nearby cities available
                 </p>
               </CardContent>
             </Card>
@@ -261,20 +261,6 @@ const Contact = () => {
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                      <Clock className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <span className="text-slate-600 font-medium">Office Hours: 9:00 AM - 5:00 PM (Mon-Fri)</span>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                      <Mail className="h-5 w-5 text-orange-600" />
-                    </div>
-                    <span className="text-slate-600 font-medium">General Inquiry: info@nitrkl.ac.in</span>
-                  </div>
-
-                  <div className="flex items-center gap-4">
                     <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
                       <Globe className="h-5 w-5 text-green-600" />
                     </div>
@@ -287,33 +273,34 @@ const Contact = () => {
                 <div className="pt-4">
                   <Button className="w-full btn-primary" asChild>
                     <a
-                      href="https://maps.google.com/maps?q=National+Institute+of+Technology+Rourkela"
+                      href="https://maps.google.com/maps?q=Mining+Department+NIT+Rourkela,+Rourkela,+Odisha"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <MapPin className="h-5 w-5 mr-2" />
-                      View on Google Maps
+                      View Mining Department on Google Maps
                     </a>
                   </Button>
                 </div>
               </CardContent>
             </Card>
 
+            {/* Map Embed */}
             <Card className="card-enhanced animate-on-scroll overflow-hidden">
               <CardHeader>
-                <CardTitle>NIT Rourkela Location</CardTitle>
+                <CardTitle>Mining Department - NIT Rourkela</CardTitle>
               </CardHeader>
               <CardContent className="p-0">
                 <div className="w-full h-96 relative overflow-hidden rounded-b-lg">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58892.89824406229!2d84.81674554003906!3d22.254065700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a201c5f5b7a8a47%3A0x8e9c4e8c8e9b8d0a!2sNational%20Institute%20of%20Technology%20Rourkela!5e0!3m2!1sen!2sin!4v1635789012345!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.8!2d84.90127!3d22.25204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a201d4b40a8f2b7%3A0x4c8f9b8e9c4e8d0a!2sMining%20Department%2C%20NIT%20Rourkela!5e0!3m2!1sen!2sin!4v1635789012345!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="NIT Rourkela Location"
+                    title="Mining Department - NIT Rourkela Location"
                     className="hover:saturate-0 transition-all duration-300"
                   />
                 </div>

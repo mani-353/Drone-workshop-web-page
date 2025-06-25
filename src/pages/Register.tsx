@@ -54,13 +54,10 @@ const Register = () => {
 
   const courseBenefits = [
     "5-day intensive training program",
-    "Hands-on experience with drone technology",
-    "Expert faculty from NIT Rourkela and industry",
-    "Course materials and resources",
+    "Expert faculty from permium institutions and academic/industry",
     "Certificate from NIT Rourkela",
     "Networking opportunities with professionals",
     "Access to latest drone surveying techniques",
-    "Practical field training sessions"
   ];
 
   return (
@@ -145,7 +142,7 @@ const Register = () => {
                     <h4 className="font-bold text-green-800 mb-3 text-lg">Course Fee</h4>
                     <div className="space-y-2 text-green-700">
                       <p className="text-2xl font-bold">₹25,000 + 18% GST</p>
-                      <p className="text-sm">Per participant from industries/academic institutions</p>
+                      <p className="text-sm">Per participant from industries</p>
                     </div>
                   </div>
 

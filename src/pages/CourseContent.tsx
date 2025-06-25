@@ -384,7 +384,7 @@ const CourseContent = () => {
                   <div className="p-4 bg-blue-50 rounded-lg">
                     <p className="text-sm text-slate-600">
                       <strong>Recommendation:</strong> On-campus accommodation is considered most convenient due to proximity to the venue.
-                      Please contact course coordinators early to secure guest house booking.
+                      Request can be made to course coordinators for guest house bookimgs on payment basis.
                     </p>
                   </div>
                 </CardContent>

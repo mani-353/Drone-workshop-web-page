@@ -66,7 +66,7 @@ const Index = () => {
 
             <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8 leading-relaxed bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
               Join us for an intensive 5-day course covering cutting-edge drone technology,
-              data processing, GIS integration, and practical applications in mining operations.
+              data processing, and practical applications in mining operations.
               Experience hands-on training with industry experts at India's premier technical institution.
             </p>
 
@@ -284,30 +284,33 @@ const Index = () => {
       </section>
 
       {/* Technology Focus */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12 animate-on-scroll">
-            <h2 className="text-4xl font-bold mb-4 hero-heading">
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-4">
               Advanced Technologies Covered
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Master cutting-edge tools and techniques in drone surveying and mapping
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               { icon: Plane, title: "Drone Technology", desc: "Multi-rotor & Fixed-wing systems" },
-              { icon: Map, title: "GIS Integration", desc: "Advanced mapping & analysis" },
               { icon: Shield, title: "Safety Protocols", desc: "DGCA compliance & regulations" },
               { icon: Zap, title: "Data Processing", desc: "Photogrammetry & 3D modeling" }
             ].map((tech, index) => (
-              <div key={index} className="card-enhanced p-6 text-center animate-on-scroll group" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-orange-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <tech.icon className="h-8 w-8 text-white" />
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <tech.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2">{tech.title}</h3>
-                <p className="text-slate-600 text-sm">{tech.desc}</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                  {tech.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {tech.desc}
+                </p>
               </div>
             ))}
           </div>
