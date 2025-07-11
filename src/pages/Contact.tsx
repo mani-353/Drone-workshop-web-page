@@ -50,7 +50,7 @@ const Contact = () => {
       color: "from-green-500 to-green-600"
     },
     {
-      name: "Prof. Yugal Kishore Patanwar",
+      name: "Prof. Yugal Kishor Patanwar",
       title: "Course Coordinator",
       department: "Department of Mining Engineering",
       phone: "+91 96816 78018",
@@ -82,7 +82,7 @@ const Contact = () => {
 
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-12 animate-fade-in-scale">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 hero-heading">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 hero-heading-alt">
               Contact Information
             </h1>
             <p className="text-xl text-slate-700 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-4 rounded-xl">

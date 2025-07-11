@@ -169,7 +169,7 @@ const LocalAttractions = () => {
 
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-orange-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 hero-heading-alt">
               Discover Rourkela
             </h1>
             <p className="text-xl text-slate-700 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-6 rounded-xl shadow-lg">

@@ -117,7 +117,7 @@ const CourseContent = () => {
 
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-12 animate-fade-in-scale">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 hero-heading">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-8 hero-heading-alt">
               Course Content & Structure
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-700 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-3 md:p-4 rounded-xl">
@@ -174,11 +174,12 @@ const CourseContent = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {[
-                  { tier: "Platinum Sponsor", amount: "₹2.00 Lakhs", participants: "4 free participants", color: "from-gray-400 to-gray-600" },
-                  { tier: "Gold Sponsor", amount: "₹1.50 Lakhs", participants: "3 free participants", color: "from-yellow-400 to-yellow-600" },
-                  { tier: "Silver Sponsor", amount: "₹1.00 Lakh", participants: "2 free participants", color: "from-gray-300 to-gray-500" }
+                  { tier: "Title Sponsor", amount: "₹2.00 Lakhs", participants: "4 free participants", color: "from-yellow-400 to-yellow-600" },
+                  { tier: "Platinum Sponsor", amount: "₹1.50 Lakhs", participants: "3 free participants", color: "from-gray-400 to-gray-600" },
+                  { tier: "Gold Sponsor", amount: "₹1.00 Lakhs", participants: "2 free participants", color: "from-yellow-200 to-yellow-400" },
+                  { tier: "Silver Sponsor", amount: "₹0.50 Lakh", participants: "1 free participants", color: "from-gray-200 to-gray-400" }
                 ].map((sponsor, index) => (
                   <div key={index} className="text-center p-4 border rounded-lg">
                     <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${sponsor.color} mx-auto mb-3 flex items-center justify-center`}>

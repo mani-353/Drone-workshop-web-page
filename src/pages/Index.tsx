@@ -43,7 +43,7 @@ const Index = () => {
 
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-12 animate-fade-in-scale">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight hero-heading">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 hero-heading-alt">
               Drone Surveying & Mapping
               <br />
               <span className="text-3xl md:text-5xl lg:text-6xl">for Mining Professionals</span>

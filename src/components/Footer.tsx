@@ -53,18 +53,6 @@ const Footer = () => {
               </a>
             </p>
           </div>
-
-          {/* Right: Quick Links */}
-          <div className="text-center md:text-right">
-            <div className="space-y-1">
-              <a href="/terms" className="block text-blue-200 hover:text-white transition-colors text-sm">
-                Terms & Conditions
-              </a>
-              <a href="/copyright" className="block text-blue-200 hover:text-white transition-colors text-sm">
-                Copyright Policy
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </footer>

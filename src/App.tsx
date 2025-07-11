@@ -7,8 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import CourseContent from "./pages/CourseContent";
 import LocalAttractions from "./pages/LocalAttractions";
-import TermsConditions from "./pages/TermsConditions";
-import CopyrightPolicy from "./pages/CopyrightPolicy";
 import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
@@ -29,8 +27,6 @@ const App = () => (
             <Route path="/LocalAttractions" element={<LocalAttractions />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/terms" element={<TermsConditions />} />
-            <Route path="/copyright" element={<CopyrightPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <FloatingRegisterButton />

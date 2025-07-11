@@ -71,7 +71,7 @@ const Register = () => {
 
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-12 animate-fade-in-scale">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 hero-heading">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 hero-heading-alt">
               Register for the Workshop
             </h1>
             <p className="text-xl text-slate-700 max-w-3xl mx-auto mb-8 bg-white/60 backdrop-blur-sm p-4 rounded-xl">

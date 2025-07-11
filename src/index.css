@@ -245,27 +245,19 @@
 }
 
 /* Enhanced heading styles - NO YELLOW/ORANGE */
-.hero-heading {
+
+
+.hero-heading-alt {
   background: linear-gradient(135deg, rgb(15 50 120) 0%, rgb(59 130 246) 50%, rgb(99 102 241) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.hero-heading::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 4px;
-  background: linear-gradient(90deg, rgb(99 102 241), rgb(59 130 246));
-  /* No orange */
-  border-radius: 2px;
-  animation: expand-underline 1s ease-out 0.5s forwards;
+  line-height: 1.4;
+  padding: 0.3em 0;
+  /* Better support for descenders */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 @keyframes expand-underline {
@@ -351,10 +343,6 @@
 
 /* Mobile responsiveness improvements */
 @media (max-width: 768px) {
-  .hero-heading {
-    font-size: 2.5rem;
-    line-height: 1.1;
-  }
 
   .floating-register {
     bottom: 16px;
