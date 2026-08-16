@@ -212,15 +212,55 @@ const CourseContent = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <GraduationCap className="h-6 w-6 text-blue-600" />
-                    Course Structure
+                    Course Structure & Practical Methodology
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="prose prose-slate max-w-none">
-                  <p className="text-slate-600 leading-relaxed mb-4">
+                <CardContent className="space-y-6">
+                  <p className="text-slate-600 leading-relaxed">
                     The course will be primarily offered by faculty members of NIT Rourkela. Experts from other academic institutions,
-                    regulatory agencies, organizations like IITs, NITs and DGMS and industries may be invited to share their latest
-                    research findings with the participants.
+                    regulatory agencies, organizations like IITs, NITs, DGMS, and leading industries are invited to share their latest
+                    research findings and field applications with the participants.
                   </p>
+
+                  {/* Visual Glimpses from Previous Edition */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                    <div className="rounded-xl overflow-hidden shadow-md border border-slate-100 group">
+                      <div className="h-48 overflow-hidden bg-slate-900 relative">
+                        <img 
+                          src="/IMG_1644.jpg" 
+                          alt="Hands-on Drone Field Operations" 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                        <div className="absolute bottom-3 left-3 text-white">
+                          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500 text-white">Field Session</span>
+                          <h5 className="font-bold text-sm mt-1">Live Flight & Base Station Setup</h5>
+                        </div>
+                      </div>
+                      <div className="p-4 bg-slate-50">
+                        <p className="text-xs text-slate-600">Real-time drone operation, ground control points (GCP) surveying, and sensor calibration.</p>
+                      </div>
+                    </div>
+
+                    <div className="rounded-xl overflow-hidden shadow-md border border-slate-100 group">
+                      <div className="h-48 overflow-hidden bg-slate-900 relative">
+                        <img 
+                          src="/IMG_1705.jpg" 
+                          alt="Interactive Lecture in Seminar Hall" 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                        <div className="absolute bottom-3 left-3 text-white">
+                          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-500 text-white">Classroom Session</span>
+                          <h5 className="font-bold text-sm mt-1">Photogrammetry & Data Processing</h5>
+                        </div>
+                      </div>
+                      <div className="p-4 bg-slate-50">
+                        <p className="text-xs text-slate-600">In-depth classroom modules, 3D point cloud generation, and volumetric calculations.</p>
+                      </div>
+                    </div>
+                  </div>
+
                   <p className="text-slate-600 leading-relaxed">
                     Each session will be followed by interactive Question & Answer sessions to ensure comprehensive understanding
                     and practical application of the concepts learned.
@@ -297,7 +337,7 @@ const CourseContent = () => {
                       <p>• Course fee does not include boarding, lodging, or transportation</p>
                       <p>• The course is non-residential</p>
                       <p>• NIT Rourkela is exempted from Income Tax (no TDS deduction)</p>
-                      <p>• Registration deadline: <strong>October 27, 2025</strong></p>
+                      <p>• Registration deadline: <strong>November 16, 2026</strong></p>
                       <p>• Registration fees once paid will not be refunded</p>
                     </div>
                   </CardContent>

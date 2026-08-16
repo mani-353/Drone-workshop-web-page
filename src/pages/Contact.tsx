@@ -30,43 +30,25 @@ const Contact = () => {
 
   const coordinators = [
     {
-      name: "Prof. Amit Kumar Gorai",
-      title: "Course Coordinator",
-      department: "Department of Mining Engineering",
-      phone: "+91-661-246 2615",
-      email: "goraia@nitrkl.ac.in",
-      photo: "/amit_kumar_gorai.jpg", // Replace with actual image URL
-      profileLink: "https://www.nitrkl.ac.in/FacultyStaff/FacultyProfile/goraia",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      name: "Prof. Ram Manohar Bishwal",
-      title: "Course Coordinator",
-      department: "Department of Mining Engineering",
-      phone: "+91-661-246 4611",
-      email: "bishwalrm@nitrkl.ac.in",
-      photo: "/ram_manhor_bishwal.jpeg", // Replace with actual image URL
-      profileLink: "https://www.nitrkl.ac.in/FacultyStaff/FacultyProfile/bishwalrm",
-      color: "from-green-500 to-green-600"
-    },
-    {
-      name: "Prof. Yugal Kishor Patanwar",
-      title: "Course Coordinator",
-      department: "Department of Mining Engineering",
-      phone: "+91 96816 78018",
-      email: "patanwaryk@nitrkl.ac.in",
-      photo: "/Yugal_kishor_patanwar.jpg", // Replace with actual image URL
-      profileLink: "https://www.nitrkl.ac.in/FacultyStaff/FacultyProfile/patanwaryk",
-      color: "from-orange-500 to-orange-600"
-    },
-    {
       name: "Prof. Charan Kumar Ala",
       title: "Course Coordinator",
       department: "Department of Mining Engineering",
-      phone: "+91 77355 37803",
+      institution: "NIT Rourkela-769008 Odisha",
+      phone: "+91-661-246 2619",
       email: "alacharan@nitrkl.ac.in",
       photo: "/charan_kumar_ala.jpg",
       profileLink: "https://www.nitrkl.ac.in/FacultyStaff/FacultyProfile/alacharan",
+      color: "from-blue-500 to-blue-600"
+    },
+    {
+      name: "Prof. Amit Kumar Gorai",
+      title: "Course Coordinator",
+      department: "Department of Mining Engineering",
+      institution: "NIT Rourkela-769008 Odisha",
+      phone: "+91-661-246 2615",
+      email: "goraia@nitrkl.ac.in",
+      photo: "/amit_kumar_gorai.jpg",
+      profileLink: "https://www.nitrkl.ac.in/FacultyStaff/FacultyProfile/goraia",
       color: "from-purple-500 to-purple-600"
     }
   ];
@@ -138,6 +120,13 @@ const Contact = () => {
                       <Building className="h-5 w-5 text-blue-600" />
                     </div>
                     <span className="font-medium">{coordinator.department}</span>
+                  </div>
+
+                  <div className="flex items-center gap-4 text-slate-600">
+                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                      <MapPin className="h-5 w-5 text-purple-600" />
+                    </div>
+                    <span className="font-medium">{coordinator.institution}</span>
                   </div>
 
                   <div className="flex items-center gap-4 text-slate-600">

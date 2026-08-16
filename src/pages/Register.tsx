@@ -81,7 +81,7 @@ const Register = () => {
             <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
               <Badge className="px-6 py-3 text-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white border-0">
                 <Clock className="h-5 w-5 mr-2" />
-                Registration Deadline: Oct 27, 2025
+                Registration Deadline: Nov 16, 2026
               </Badge>
               <Badge className="px-6 py-3 text-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0">
                 <Users className="h-5 w-5 mr-2" />
@@ -123,7 +123,7 @@ const Register = () => {
                     asChild
                   >
                     <a
-                      href="https://forms.gle/mNRhJD5r1J1k3S7e7"
+                      href="https://forms.gle/XgrHk66zProX7qQQ7"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3"
@@ -152,7 +152,7 @@ const Register = () => {
                     </div>
                     <h4 className="font-bold text-red-800 mb-3 text-lg">Payment Deadline</h4>
                     <div className="space-y-2 text-red-700">
-                      <p className="text-xl font-bold">October 27, 2025</p>
+                      <p className="text-xl font-bold">November 16, 2026</p>
                       <p className="text-sm">Registration fees once paid will not be refunded</p>
                     </div>
                   </div>
@@ -225,7 +225,7 @@ const Register = () => {
                     <h4 className="font-bold text-yellow-800">Registration Deadline</h4>
                   </div>
                   <p className="text-yellow-700">
-                    Course fee along with nominations must be sent latest by October 27, 2025
+                    Course fee along with nominations must be sent latest by November 16, 2026
                   </p>
                 </div>
 
@@ -251,6 +251,51 @@ const Register = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Past Edition Glimpse */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-7xl">
+          <Card className="card-enhanced overflow-hidden border-0 shadow-xl bg-gradient-to-r from-blue-900 to-slate-900 text-white animate-on-scroll">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="p-8 lg:p-12 flex flex-col justify-center space-y-6">
+                <Badge className="w-fit bg-orange-500 text-white border-0 text-sm px-3 py-1">
+                  Edition I Legacy
+                </Badge>
+                <h3 className="text-3xl font-bold leading-tight">
+                  Join the League of Certified Mining Professionals
+                </h3>
+                <p className="text-blue-100 leading-relaxed">
+                  Edition I brought together industry engineers, geologists, and surveying officers from leading mining organizations across India. Gain formal certification from NIT Rourkela and advance your career with hands-on drone expertise.
+                </p>
+                <div className="pt-2">
+                  <Button className="btn-accent text-base px-8 py-5" asChild>
+                    <a
+                      href="https://forms.gle/XgrHk66zProX7qQQ7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      Secure Your Seat for Edition II
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+              <div className="relative min-h-[280px] lg:min-h-[360px]">
+                <img
+                  src="/IMG_1956.jpg"
+                  alt="Edition I Certificate Distribution Ceremony"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-blue-900/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-sm p-3 rounded-lg text-xs text-white">
+                  Certificate Distribution Ceremony with NIT Rourkela Faculty & Edition I Delegates
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 

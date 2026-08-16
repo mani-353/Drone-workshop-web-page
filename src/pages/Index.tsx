@@ -1,13 +1,85 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import ImageCarousel from '@/components/ImageCarousel';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Calendar, MapPin, GraduationCap, Users, Award, BookOpen, Plane, Map, Shield, Zap, Building } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Calendar, MapPin, GraduationCap, Users, Award, BookOpen, Plane, Map, Shield, Zap, Building, Camera, X, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 
 const Index = () => {
+  const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
+
+  const workshopPhotos = [
+    {
+      src: "/IMG_2060.jpg",
+      title: "Batch of Edition I",
+      category: "Group Photo",
+      description: "Participants and faculty members outside the Department of Mining Engineering, NIT Rourkela.",
+      badgeColor: "bg-blue-500/90 text-white"
+    },
+    {
+      src: "/IMG_1644.jpg",
+      title: "Practical Field Flight Training",
+      category: "Field Operations",
+      description: "Live drone equipment unboxing, calibration, GNSS base station setup, and flight mission demonstrations.",
+      badgeColor: "bg-emerald-500/90 text-white"
+    },
+    {
+      src: "/IMG_1705.jpg",
+      title: "Interactive Classroom Sessions",
+      category: "Lecture Hall",
+      description: "Comprehensive lecture modules covering photogrammetry, 3D modeling, and mine survey workflows.",
+      badgeColor: "bg-purple-500/90 text-white"
+    },
+    {
+      src: "/IMG_1914.jpg",
+      title: "Inaugural Ceremony",
+      category: "Inauguration",
+      description: "Dignitaries, institute faculty, and course coordinators addressing industry participants during the inaugural event.",
+      badgeColor: "bg-orange-500/90 text-white"
+    },
+    {
+      src: "/IMG_1956.jpg",
+      title: "Valedictory & Certification",
+      category: "Certification",
+      description: "Presentation of course completion certificates to industry delegates and mining professionals.",
+      badgeColor: "bg-green-600/90 text-white"
+    },
+    {
+      src: "/IMG_1898.jpg",
+      title: "Industry Delegate Discussions",
+      category: "Delegates",
+      description: "Mining engineers, geologists, and surveying professionals engaged in interactive technical discussions.",
+      badgeColor: "bg-indigo-500/90 text-white"
+    }
+  ];
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedPhoto === null) return;
+      if (e.key === 'Escape') setSelectedPhoto(null);
+      if (e.key === 'ArrowRight') setSelectedPhoto((prev) => (prev !== null ? (prev + 1) % workshopPhotos.length : null));
+      if (e.key === 'ArrowLeft') setSelectedPhoto((prev) => (prev !== null ? (prev - 1 + workshopPhotos.length) % workshopPhotos.length : null));
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedPhoto, workshopPhotos.length]);
+
+  const nextPhoto = () => {
+    if (selectedPhoto !== null) {
+      setSelectedPhoto((selectedPhoto + 1) % workshopPhotos.length);
+    }
+  };
+
+  const prevPhoto = () => {
+    if (selectedPhoto !== null) {
+      setSelectedPhoto((selectedPhoto - 1 + workshopPhotos.length) % workshopPhotos.length);
+    }
+  };
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -44,15 +116,15 @@ const Index = () => {
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-12 animate-fade-in-scale">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 hero-heading-alt">
-              Drone Surveying & Mapping
+              Drone Surveying & Mapping for
               <br />
-              <span className="text-3xl md:text-5xl lg:text-6xl">for Mining Professionals</span>
+              <span className="text-3xl md:text-5xl lg:text-6xl">Mining Professionals-II</span>
             </h1>
 
             <div className="flex flex-wrap justify-center items-center gap-6 mb-8 text-lg">
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
                 <Calendar className="h-5 w-5 text-blue-600" />
-                <span className="font-semibold text-slate-800">November 3-7, 2025</span>
+                <span className="font-semibold text-slate-800">November 23-27, 2026</span>
               </div>
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
                 <MapPin className="h-5 w-5 text-blue-600" />
@@ -233,6 +305,64 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Past Workshop Highlights (Edition I) */}
+      <section className="py-16 px-4 bg-white/70 backdrop-blur-sm">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-12 animate-on-scroll">
+            <Badge className="mb-3 px-4 py-1.5 text-sm bg-blue-100 text-blue-800 border-blue-200">
+              <Camera className="h-4 w-4 mr-1.5" />
+              Past Workshop Gallery
+            </Badge>
+            <h2 className="text-4xl font-bold mb-4">
+              <span className="hero-heading">Highlights of Edition I</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Glimpses from the previous short-term course featuring practical field flight training, interactive classroom lectures, and certificate distribution
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {workshopPhotos.map((photo, index) => (
+              <Card
+                key={index}
+                className="card-enhanced group overflow-hidden cursor-pointer border-0 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 bg-white"
+                style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => setSelectedPhoto(index)}
+              >
+                <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                  <img
+                    src={photo.src}
+                    alt={photo.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+
+                  {/* Category Badge */}
+                  <div className="absolute top-3 left-3">
+                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md ${photo.badgeColor} shadow-md`}>
+                      {photo.category}
+                    </span>
+                  </div>
+
+                  {/* View Icon Overlay */}
+                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Eye className="h-4 w-4" />
+                  </div>
+
+                  {/* Title / Caption */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                    <h3 className="font-bold text-lg leading-tight group-hover:text-blue-200 transition-colors">
+                      {photo.title}
+                    </h3>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Key Highlights */}
       <section className="py-16 px-4 bg-gradient-to-br from-blue-900 via-slate-800 to-blue-900 text-white relative overflow-hidden">
         {/* Background Elements */}
@@ -316,6 +446,78 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Workshop Photo Lightbox Modal */}
+      {selectedPhoto !== null && (
+        <div
+          className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full max-h-[90vh] flex flex-col bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header with Close button */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 text-white bg-slate-900/80">
+              <div className="flex items-center gap-3">
+                <span className={`text-xs font-semibold px-3 py-1 rounded-full ${workshopPhotos[selectedPhoto].badgeColor}`}>
+                  {workshopPhotos[selectedPhoto].category}
+                </span>
+                <span className="text-sm text-slate-400">
+                  {selectedPhoto + 1} of {workshopPhotos.length}
+                </span>
+              </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white/80 hover:text-white hover:bg-white/10 rounded-full h-9 w-9"
+                onClick={() => setSelectedPhoto(null)}
+              >
+                <X className="h-5 w-5" />
+              </Button>
+            </div>
+
+            {/* Image Container */}
+            <div className="relative flex-1 bg-black flex items-center justify-center min-h-[300px] max-h-[65vh] overflow-hidden">
+              <img
+                src={workshopPhotos[selectedPhoto].src}
+                alt={workshopPhotos[selectedPhoto].title}
+                className="max-w-full max-h-[65vh] object-contain select-none"
+              />
+
+              {/* Prev Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full h-11 w-11 border border-white/20 backdrop-blur-sm"
+                onClick={prevPhoto}
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </Button>
+
+              {/* Next Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full h-11 w-11 border border-white/20 backdrop-blur-sm"
+                onClick={nextPhoto}
+              >
+                <ChevronRight className="h-6 w-6" />
+              </Button>
+            </div>
+
+            {/* Caption Footer */}
+            <div className="p-5 bg-slate-900 border-t border-white/10 text-white">
+              <h3 className="text-xl font-bold mb-1.5 text-white">
+                {workshopPhotos[selectedPhoto].title}
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                {workshopPhotos[selectedPhoto].description}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>

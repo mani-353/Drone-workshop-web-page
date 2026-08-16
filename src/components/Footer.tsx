@@ -39,7 +39,7 @@ const Footer = () => {
           {/* Center: Copyright */}
           <div className="text-center">
             <p className="text-blue-100 text-sm leading-relaxed">
-              All Copyright © 2025 Department of Mining Engineering, NIT ROURKELA. All Rights Reserved.
+              All Copyright © 2026 Department of Mining Engineering, NIT ROURKELA. All Rights Reserved.
             </p>
             <p className="text-blue-200 mt-2 text-sm">
               Designed and Developed By{' '}
