@@ -199,8 +199,8 @@ const Index = () => {
                       <div className="text-xs text-slate-600">World Ranking (Engineering)</div>
                     </div>
                     <div className="text-center p-3 bg-orange-50 rounded-lg">
-                      <div className="font-bold text-orange-600">19th</div>
-                      <div className="text-xs text-slate-600">NIRF Ranking 2024</div>
+                      <div className="font-bold text-orange-600">13th</div>
+                      <div className="text-xs text-slate-600">NIRF Ranking 2025</div>
                     </div>
                   </div>
                 </div>
