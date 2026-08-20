@@ -43,8 +43,7 @@ const CourseContent = () => {
       title: "Introduction to Drone Technology & Mining Applications",
       topics: [
         "Importance of surveying in mining operations",
-        "Overview of Drone Surveys vs. Total Station Surveys – Pros & Cons",
-        "Types of drones used in mining (Fixed-wing, Multi-rotor)",
+        "Overview of Drone Surveys vis-à-vis conventional methods.",
         "Regulations & Compliance (DGCA, FAA, Mining Laws)",
         "Applications in Mining for Detecting Gas Leaks, Coal Mine Fires",
         "Environmental Monitoring, Mine planning, Volume Estimation",
@@ -71,10 +70,14 @@ const CourseContent = () => {
       day: "Day 3",
       title: "Hands-on Drone Flying & Data Collection",
       topics: [
-        "Field Training: Operating drones in a mining site",
-        "Take-off, landing, battery management",
-        "Capturing high-resolution images, LiDAR scans",
-        "Emergency handling & troubleshooting common issues"
+        "Field Training on drone operations planning",
+        "Flying, take-off, landing",
+        "Battery management",
+        "Capturing high-resolution images",
+        "Emergency handling & troubleshooting",
+        "Maintenance and repair of drone",
+        "Field Training on drone survey with integrated DGPS",
+        "Data capture using LiDAR, LiDAR Data Analysis"
       ],
       icon: "🎯",
       color: "from-orange-500 to-orange-600"
@@ -99,7 +102,9 @@ const CourseContent = () => {
       topics: [
         "Basics of GIS (Geographic Information Systems)",
         "Integrating drone survey data into GIS",
+        "Demonstrating the use of satellite data/Drone data for LULC analysis",
         "Creating topographic maps, contour models",
+        "Satellite/Drone data for surface and sub-surface coal fire detection and mapping",
         "Application in mine planning, reclamation, and environmental monitoring"
       ],
       icon: "🗺️",

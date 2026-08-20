@@ -28,10 +28,10 @@ const Contact = () => {
     return () => observer.disconnect();
   }, []);
 
-  const coordinators = [
+  const facultyMembers = [
     {
       name: "Prof. Charan Kumar Ala",
-      title: "Course Coordinator",
+      badge: "Course Coordinator",
       department: "Department of Mining Engineering",
       institution: "NIT Rourkela-769008 Odisha",
       phone: "+91-661-246 2619",
@@ -42,7 +42,7 @@ const Contact = () => {
     },
     {
       name: "Prof. Amit Kumar Gorai",
-      title: "Course Coordinator",
+      badge: "Course Coordinator",
       department: "Department of Mining Engineering",
       institution: "NIT Rourkela-769008 Odisha",
       phone: "+91-661-246 2615",
@@ -50,6 +50,26 @@ const Contact = () => {
       photo: "/amit_kumar_gorai.jpg",
       profileLink: "https://www.nitrkl.ac.in/FacultyStaff/FacultyProfile/goraia",
       color: "from-purple-500 to-purple-600"
+    },
+    {
+      name: "Prof. Ram Manohar Bishwal",
+      department: "Department of Mining Engineering",
+      institution: "NIT Rourkela-769008 Odisha",
+      phone: "0661 - 246 4611",
+      email: "bishwalrm@nitrkl.ac.in",
+      photo: "/Ram.jpeg",
+      profileLink: "https://www.nitrkl.ac.in/FacultyStaff/FacultyProfile/bishwalrm",
+      color: "from-green-500 to-green-600"
+    },
+    {
+      name: "Prof. Yugal Kishor Patanwar",
+      department: "Department of Mining Engineering",
+      institution: "NIT Rourkela-769008 Odisha",
+      phone: "+91 96816 78018",
+      email: "patanwaryk@nitrkl.ac.in",
+      photo: "/yugal.jpg",
+      profileLink: "https://www.nitrkl.ac.in/FacultyStaff/FacultyProfile/patanwaryk",
+      color: "from-orange-500 to-orange-600"
     }
   ];
 
@@ -68,47 +88,49 @@ const Contact = () => {
               Contact Information
             </h1>
             <p className="text-xl text-slate-700 max-w-3xl mx-auto bg-white/60 backdrop-blur-sm p-4 rounded-xl">
-              Get in touch with our course coordinators for any queries or assistance
+              Get in touch with our course coordinators and faculty members for any queries or assistance
             </p>
           </div>
         </div>
       </section>
 
-      {/* Course Coordinators */}
+      {/* Course Coordinators & Faculty */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-7xl">
           <h2 className="text-4xl font-bold text-center mb-4 animate-on-scroll">
-            <span className="hero-heading">Course Coordinators</span>
+            <span className="hero-heading">Course Coordinators & Faculty</span>
           </h2>
           <p className="text-xl text-center text-slate-600 mb-12 animate-on-scroll">
             Expert faculty members ready to assist you
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {coordinators.map((coordinator, index) => (
+            {facultyMembers.map((member, index) => (
               <Card key={index} className="card-enhanced group overflow-hidden" style={{ animationDelay: `${index * 0.1}s` }}>
-                <CardHeader className={`bg-gradient-to-r ${coordinator.color} text-white relative overflow-hidden`}>
+                <CardHeader className={`bg-gradient-to-r ${member.color} text-white relative overflow-hidden`}>
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
                   <div className="flex items-center gap-4 relative z-10">
-                    <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white/30 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white/30 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                       <img
-                        src={coordinator.photo}
-                        alt={coordinator.name}
+                        src={member.photo}
+                        alt={member.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div>
-                      <Badge className="mb-3 bg-white/20 text-black border-0 backdrop-blur-sm">
-                        Course Coordinator
-                      </Badge>
+                      {member.badge && (
+                        <Badge className="mb-2 bg-white/20 text-black border-0 backdrop-blur-sm">
+                          {member.badge}
+                        </Badge>
+                      )}
                       <CardTitle className="text-xl">
                         <a
-                          href={coordinator.profileLink}
+                          href={member.profileLink}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="hover:underline cursor-pointer"
                         >
-                          {coordinator.name}
+                          {member.name}
                         </a>
                       </CardTitle>
                     </div>
@@ -116,46 +138,46 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent className="p-8 space-y-6">
                   <div className="flex items-center gap-4 text-slate-600">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <Building className="h-5 w-5 text-blue-600" />
                     </div>
-                    <span className="font-medium">{coordinator.department}</span>
+                    <span className="font-medium">{member.department}</span>
                   </div>
 
                   <div className="flex items-center gap-4 text-slate-600">
-                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <MapPin className="h-5 w-5 text-purple-600" />
                     </div>
-                    <span className="font-medium">{coordinator.institution}</span>
+                    <span className="font-medium">{member.institution}</span>
                   </div>
 
                   <div className="flex items-center gap-4 text-slate-600">
-                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <Phone className="h-5 w-5 text-green-600" />
                     </div>
-                    <a href={`tel:${coordinator.phone}`} className="hover:text-green-600 transition-colors font-medium">
-                      {coordinator.phone}
+                    <a href={`tel:${member.phone}`} className="hover:text-green-600 transition-colors font-medium">
+                      {member.phone}
                     </a>
                   </div>
 
                   <div className="flex items-center gap-4 text-slate-600">
-                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <Mail className="h-5 w-5 text-orange-600" />
                     </div>
-                    <a href={`mailto:${coordinator.email}`} className="hover:text-orange-600 transition-colors font-medium">
-                      {coordinator.email}
+                    <a href={`mailto:${member.email}`} className="hover:text-orange-600 transition-colors font-medium">
+                      {member.email}
                     </a>
                   </div>
 
                   <div className="pt-4 flex gap-3">
                     <Button className="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700" asChild>
-                      <a href={`mailto:${coordinator.email}`}>
+                      <a href={`mailto:${member.email}`}>
                         <Mail className="h-4 w-4 mr-2" />
                         Send Email
                       </a>
                     </Button>
                     <Button className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700" asChild>
-                      <a href={`tel:${coordinator.phone}`}>
+                      <a href={`tel:${member.phone}`}>
                         <Phone className="h-4 w-4 mr-2" />
                         Call
                       </a>
