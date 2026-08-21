@@ -1,13 +1,53 @@
 
-import { useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, CheckCircle, Clock, DollarSign, FileText, Users, Shield, Award } from 'lucide-react';
+import { ExternalLink, CheckCircle, Clock, DollarSign, FileText, Users, Shield, Award, Camera, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Register = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const workshopImages = [
+    { src: "/Workshop_3.jpeg", title: "Edition I Workshop Delegation" },
+    { src: "/Workshop_2.jpeg", title: "DGPS & GNSS Base Station Setup" },
+    { src: "/IMG_1644.jpg", title: "Practical Field Flight Training" },
+    { src: "/Workshop_4.jpeg", title: "Participants & Faculty Assembly" },
+    { src: "/IMG_1705.jpg", title: "Interactive Classroom Sessions" },
+    { src: "/Workshop_1.jpeg", title: "Technical Lecture Hall Sessions" },
+    { src: "/IMG_1914.jpg", title: "Inaugural Ceremony" },
+    { src: "/IMG_1956.jpg", title: "Valedictory & Certification" },
+    { src: "/IMG_1898.jpg", title: "Industry Delegate Discussions" },
+    { src: "/IMG_2060.jpg", title: "Batch of Edition I" }
+  ];
+
+  // Auto-scroll carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % workshopImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [workshopImages.length]);
+
+  // Scroll into view when slide changes
+  useEffect(() => {
+    if (carouselRef.current) {
+      const scrollAmount = currentSlide * 320;
+      carouselRef.current.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }, [currentSlide]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % workshopImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + workshopImages.length) % workshopImages.length);
+  };
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -250,6 +290,91 @@ const Register = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Workshop Highlights Carousel */}
+      <section className="py-16 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 overflow-hidden">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-10 animate-on-scroll">
+            <Badge className="mb-3 px-4 py-1.5 text-sm bg-blue-100 text-blue-800 border-blue-200">
+              <Camera className="h-4 w-4 mr-1.5" />
+              Edition I Gallery
+            </Badge>
+            <h2 className="text-4xl font-bold mb-3">
+              <span className="hero-heading">Glimpses from Previous Workshop</span>
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              See what our participants experienced in the first edition
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Prev Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full h-10 w-10 border border-slate-200"
+              onClick={prevSlide}
+            >
+              <ChevronLeft className="h-5 w-5 text-slate-700" />
+            </Button>
+
+            {/* Carousel Track */}
+            <div
+              ref={carouselRef}
+              className="flex gap-5 overflow-x-auto scroll-smooth px-12 pb-4 scrollbar-hide"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {workshopImages.map((image, index) => (
+                <div
+                  key={index}
+                  className={`flex-shrink-0 w-[300px] rounded-xl overflow-hidden shadow-lg border border-slate-100 transition-all duration-500 group cursor-pointer ${
+                    index === currentSlide ? 'scale-105 shadow-2xl ring-2 ring-blue-400' : 'opacity-80 hover:opacity-100'
+                  }`}
+                  onClick={() => setCurrentSlide(index)}
+                >
+                  <div className="relative h-[200px] bg-slate-900">
+                    <img
+                      src={image.src}
+                      alt={image.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3">
+                      <h4 className="text-white text-sm font-semibold leading-tight">
+                        {image.title}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Next Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full h-10 w-10 border border-slate-200"
+              onClick={nextSlide}
+            >
+              <ChevronRight className="h-5 w-5 text-slate-700" />
+            </Button>
+          </div>
+
+          {/* Dot Indicators */}
+          <div className="flex justify-center gap-2 mt-6">
+            {workshopImages.map((_, index) => (
+              <button
+                key={index}
+                className={`rounded-full transition-all duration-300 ${
+                  index === currentSlide ? 'w-8 h-2.5 bg-blue-600' : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-400'
+                }`}
+                onClick={() => setCurrentSlide(index)}
+              />
+            ))}
           </div>
         </div>
       </section>

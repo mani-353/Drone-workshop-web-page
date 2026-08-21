@@ -13,18 +13,33 @@ const Index = () => {
 
   const workshopPhotos = [
     {
-      src: "/IMG_2060.jpg",
-      title: "Batch of Edition I",
+      src: "/Workshop_3.jpeg",
+      title: "Edition I Workshop Delegation",
       category: "Group Photo",
-      description: "Participants and faculty members outside the Department of Mining Engineering, NIT Rourkela.",
-      badgeColor: "bg-blue-500/90 text-white"
+      description: "Grand group photograph of all delegates, dignitaries, and faculty members inside the auditorium during Edition I.",
+      badgeColor: "bg-blue-600/90 text-white"
+    },
+    {
+      src: "/Workshop_2.jpeg",
+      title: "DGPS & GNSS Base Station Setup",
+      category: "Field Operations",
+      description: "Live demonstration and field setup of high-precision DGPS and GNSS base stations for drone surveying.",
+      badgeColor: "bg-emerald-500/90 text-white"
     },
     {
       src: "/IMG_1644.jpg",
       title: "Practical Field Flight Training",
       category: "Field Operations",
       description: "Live drone equipment unboxing, calibration, GNSS base station setup, and flight mission demonstrations.",
-      badgeColor: "bg-emerald-500/90 text-white"
+      badgeColor: "bg-teal-500/90 text-white"
+    },
+
+    {
+      src: "/Workshop_4.jpeg",
+      title: "Participants & Faculty Assembly",
+      category: "Group Photo",
+      description: "Outdoor assembly of course participants and faculty members at the workshop venue, NIT Rourkela.",
+      badgeColor: "bg-cyan-600/90 text-white"
     },
     {
       src: "/IMG_1705.jpg",
@@ -32,6 +47,13 @@ const Index = () => {
       category: "Lecture Hall",
       description: "Comprehensive lecture modules covering photogrammetry, 3D modeling, and mine survey workflows.",
       badgeColor: "bg-purple-500/90 text-white"
+    },
+    {
+      src: "/Workshop_1.jpeg",
+      title: "Technical Lecture Hall Sessions",
+      category: "Lecture Hall",
+      description: "Mining engineers and industry delegates attending technical classroom presentations and case study discussions.",
+      badgeColor: "bg-violet-500/90 text-white"
     },
     {
       src: "/IMG_1914.jpg",
